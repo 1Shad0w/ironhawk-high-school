@@ -1,0 +1,22 @@
+{
+  "name": "ironhawk-high-school",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Official website concept for Ironhawk High School — React + Vite frontend with a Node.js/Express backend.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c magenta,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run build -w client && npm run start -w server",
+    "serve": "npm run start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
